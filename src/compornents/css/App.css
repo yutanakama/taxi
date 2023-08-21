@@ -1,0 +1,483 @@
+body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background-color: aliceblue;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+iframe {
+  vertical-align: middle;
+}
+
+/* CLEAR-FIX */
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+/*------------------------------------------------
+
+共通パーツ
+
+-------------------------------------------------*/
+.flex{
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+.pc{
+  display: block;
+}
+.sp{
+  display: none;
+}
+.fwb{
+  font-weight: bold;
+}
+.container{
+  padding: 130px 20px;
+}
+.main-ttl{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 40px;
+  text-align: center;
+}
+.main-ttl h1{
+  font-weight: bold;
+}
+@media screen and (max-width:768px) {
+  .pc{
+    display: none;
+  }
+  .sp{
+    display: block;
+  }
+  .container{
+    padding: 80px 15px;
+  }
+
+
+}
+
+/*------------------------------------------------
+
+header
+
+-------------------------------------------------*/
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background-color: teal;
+  padding: 0 20px;
+  z-index: 100;
+}
+header h1{
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+header h1 a{
+  color: #fff;
+  text-decoration: none;
+}
+@media screen and (max-width:768px) {
+  header{
+    height: 60px;
+  }
+  header h1{
+    font-size: 18px;
+  }
+
+  
+}
+
+/*------------------------------------------------
+
+common-btn01
+
+-------------------------------------------------*/
+.common-btn01{
+  
+  text-align: center;
+  margin-top: 60px;
+
+  
+}
+.common-btn01 a{
+  display: block;
+  margin: auto;
+  text-decoration: none;
+  width: 300px;
+  background: teal;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+  padding:10px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: all .3s;
+
+}
+.common-btn01 a:hover{
+  opacity: 0.7;
+}
+
+
+
+
+/*------------------------------------------------
+
+ログイン画面
+
+-------------------------------------------------*/
+
+.App {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: aliceblue;
+  }
+  .Login-box{
+    padding: 40px;
+    box-shadow: 0 2px 5px #ddd;
+    border-radius: 20px;
+    background-color: #fff;
+  }
+  .Login-box-ttl{
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 0.075em;
+  }
+  .Login-box-input{
+    margin-top: 30px;
+  
+  }
+  .Login-box-input__block{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .Login-box-input__block .-txt{
+    width: 100px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .Login-box-input__block input{
+    width: calc(100% - 100px);
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    background-color: #f5f5f5;
+  }
+  .Login-box-btn{
+    width: 300px;
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    
+    cursor: pointer;
+    background-color: teal;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+  
+  }
+  @media screen and (max-width:768px) {
+    .Login-box-ttl{
+      font-size: 22px;
+    }
+    .Login-box{
+      padding: 20px;
+    }
+    .Login-box-input__block{
+      justify-content: space-between;
+    }
+    .Login-box-input__block .-txt{
+      width: 80px;
+     font-size: 14px;
+    }
+    .Login-box-input__block input{
+      width: calc(100% - 120px);
+    }
+    .Login-box-btn{
+      width: 280px;
+      margin-top: 30px;
+      padding: 10px;
+    }
+
+
+
+  }
+  
+  
+  /*------------------------------------------------
+  
+  管理画面_メニュー画面
+  
+  -------------------------------------------------*/
+  .css-1fw5qro-MuiPaper-root{
+    width: 90% !important;
+    margin: auto;
+    margin-top: 60px;
+  }
+  .css-y8ay40-MuiTableCell-root{
+    background-color: teal !important;
+    color: #fff !important;
+    font-weight: bold !important;
+    
+  }
+  
+  .css-i02g0k-MuiTableCell-root{
+    background-color: teal !important;
+    color: #fff !important;
+    font-weight: bold !important;
+  }
+  .css-1iyq7zh-MuiDataGrid-columnHeaders{
+    background-color: teal !important;
+    color: #fff !important;
+    font-weight: bold !important;
+  }
+  .css-5wly58-MuiDataGrid-root .MuiDataGrid-columnHeader:not(.MuiDataGrid-columnHeader--sorted) .MuiDataGrid-sortIcon{
+    color: #fff;
+
+  }
+  .css-5wly58-MuiDataGrid-root .MuiDataGrid-columnHeader:not(.MuiDataGrid-columnHeader--sorted):hover .MuiDataGrid-sortIcon{
+    opacity: 1 !important;
+  }
+  .css-ptiqhd-MuiSvgIcon-root{
+    color: #fff;
+  }
+  .MuiDataGrid-menuList .css-ptiqhd-MuiSvgIcon-root{
+    color: #333;
+  }
+  /* .css-5wly58-MuiDataGrid-root .MuiDataGrid-columnSeparator--sideRight{
+    display: none;
+  } */
+  .css-t89xny-MuiDataGrid-columnHeaderTitle{
+    font-weight: bold !important;
+    font-size: 16px;
+  }
+
+
+
+/*------------------------------------------------
+  
+  予約管理画面
+  
+  -------------------------------------------------*/
+  .data-area{
+    width: 90%;
+    max-width: 960px;
+    border-radius: 20px;
+    padding: 60px 80px;
+    margin: auto;
+    margin-top: 60px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px #ddd;
+  }
+  .data-back a{
+    color: #333;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+
+  }
+  .data-box-group.-mt{
+    margin-top: 40px;
+
+  }
+  .data-box-group h2{
+    font-size: 22px;
+    font-weight: bold;
+
+  }
+  .data-box{
+    /* margin-top: 60px; */
+  }
+  .data-box-block{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+  }
+  .data-box-block.-noline{
+    border-top: none;
+  }
+  .data-box-block__ttl{
+    width: 150px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .data-box-block__cont{
+    width: calc(100% - 200px);
+    font-size: 18px;
+  }
+  .data-box-block__cont textarea{
+   height: 200px !important;
+   width: 100%;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   resize: none;
+   font-size: 18px;
+  }
+  .data-box-block__cont-txt{
+    font-weight: bold;
+  }
+  .data-box-block__cont-txt.-list{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .data-box-block__cont-txt.-list .-num{
+    width: 150px;
+  }
+  .data-box-block__cont-txt span{
+    margin-left: 10px;
+  }
+  .data-box-block__cont-txt.-mt{
+   margin-top: 10px;
+  }
+  .data-box-block__cont-txt.-flex{
+    display: flex;
+    align-items: center;
+   }
+
+  .data-box-block__cont-list{
+    margin-left: 40px;
+  }
+  .data-box-block__cont-list .-contwrap{
+    align-items: center;
+    margin-top: 10px;
+  }
+  .data-box-block__cont-list .-ttl{
+    margin-right: 5px;
+    width: 60px;
+  }
+  .data-box-block__cont-list .-num.-flex{
+   display: flex;
+   align-items: center;
+  }
+  .data-box-block__cont-list .-num .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root{
+    width: 150px;
+  }
+  .data-box-block__cont-list .-num span{
+    margin-left: 5px;
+   }
+  .data-box-block__btn{
+    display: flex;
+    align-items: center;
+  }
+  .data-box-block__btn button{
+    color: #333;
+  }
+
+  .data-box-block__cont-status{
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 10px;
+    margin-left: 20px;
+
+
+  }
+  .data-box-block__cont-status.-yet{
+    background-color: rgb(225, 65, 65);
+  }
+  .data-box-block__cont-status.-cancel{
+    background-color: rgb(29, 2, 2);
+  }
+  .data-box-block__cont-status.-confirm{
+    background-color: rgb(55, 189, 95);
+  }
+  .data-box-block__cont-status.-finish{
+    background-color: rgb(65, 134, 225);
+  }
+  .data-box-block__cont-status.-pending{
+    background-color: #b7cf68;
+  }
+
+
+  .history-data-box{
+    width: 960px;
+    border-radius: 20px;
+    padding: 60px 80px;
+    margin: auto;
+    margin-top: 60px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px #ddd;
+
+  }
+  .history-data-box h2{
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .history-data-box__table{
+    margin-top: 20px;
+  }
+  .history-data-box__table .css-15wwp11-MuiTableHead-root{
+    background-color: teal;
+  }
+  .css-1ygcj2i-MuiTableCell-root{
+    color: #fff !important;
+    font-weight: bold !important;
+  }
+  .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+    padding: 8px 10px !important;
+    border-radius: 5px;
+    font-size: 18px;
+    border: 1px solid #ddd !important;
+  }
+  .css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+    display: none;
+  }
+  .css-1ygcj2i-MuiTableCell-root{
+    font-size: 18px !important;
+    font-weight: bold !important;
+  }
+  .css-1ex1afd-MuiTableCell-root{
+    font-size: 18px !important;
+    font-weight: bold !important;
+  }
+  .css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root{
+    padding: 0 !important;
+  }
+  .data-box-block__cont-txt-w100 .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+    width: 100%;
+  }
+  .css-5wly58-MuiDataGrid-root .MuiDataGrid-row{
+    font-size: 16px;
+  }
+  .css-5wly58-MuiDataGrid-root .MuiDataGrid-row a{
+    color: #333;
+  }
