@@ -29,6 +29,15 @@ type Data = {
   driver: string
 };
 
+//日付を0000/00/00形式に変更
+const formatDate = (d) => {
+  let year = d.getFullYear();
+  let month = (d.getMonth() + 1).toString().padStart(2, '0'); // 月は0から始まるので+1し、1桁の場合は先頭に0を付加
+  let day = d.getDate().toString().padStart(2, '0'); // 日も1桁の場合は先頭に0を付加
+
+  return `${year}/${month}/${day}`;
+}
+
 export const BookingMenu: FC = memo(() => {
   // stateの作成
   const [reservationList, setReservationList] = useState<Data[]>([])
@@ -45,13 +54,14 @@ export const BookingMenu: FC = memo(() => {
           return({
             id: info.id,
             status: info.status,
-            date: new Date(info.date),
+            date: formatDate(new Date(info.date * 1000)),
             agency: info.agency,
             name: info.name,
             tel: info.tel,
             driver: info.driver
           })
-        })
+        });
+        
         setReservationList(list)
       });
   },[]);

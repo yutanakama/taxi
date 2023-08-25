@@ -7,6 +7,21 @@ import { PrimaryButton } from "../button/PrimaryButton";
 
 export const CarEdit: FC = memo(() => {
   const [isFirstRendering, setIsFirstRendering] = useState<boolean>(true);
+
+  // // 車種ID
+  const [newcarid, setnewCarid] = useState<string>("");
+  const [newcaridError, setnewCaridError] = useState<boolean>(false);
+  useEffect(() => {
+    if (isFirstRendering) {
+      setIsFirstRendering(false);
+      return;
+    }
+    if (newcarid.length < 1) {
+      setnewCaridError(true);
+    } else {
+      setnewCaridError(false);
+    }
+  }, [newcarid]); 
   // // 無線番号
   const [newwireless, setnewwireless] = useState<string>("");
   const [newwirelessError, setnewwirelessError] = useState<boolean>(false);
@@ -55,6 +70,27 @@ export const CarEdit: FC = memo(() => {
             <div className="data-box-group -mt">
               <h2>車種情報</h2>
               <div className="data-box-block">
+                <p className='data-box-block__ttl'>車種ID</p>
+                <div className='data-box-block__cont'>
+                  <p className='data-box-block__cont-txt -flex'><TextField
+                    maxRows={1}
+                    value={newcarid}
+                    placeholder="000000000"
+                    onChange={(
+                      event: React.ChangeEvent<HTMLInputElement>
+                    ) => {
+                      setnewCarid(event.target.value);
+                    }}
+                    error={newcaridError}
+                    helperText={
+                      newcaridError
+                        ? "車種IDを入力してください。"
+                        : null
+                    }
+                  /></p>
+                </div>
+              </div>
+              <div className="data-box-block">
                 <p className='data-box-block__ttl'>無線番号</p>
                 <div className='data-box-block__cont'>
                   <p className='data-box-block__cont-txt -flex'><TextField
@@ -101,6 +137,7 @@ export const CarEdit: FC = memo(() => {
           </div>
         </div>
         <PrimaryButton>保存</PrimaryButton>
+        
 
 
       </div>

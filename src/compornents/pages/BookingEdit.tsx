@@ -271,7 +271,7 @@ export const BookingEdit: FC = memo(() => {
     } else {
       setwirelessError(false);
     }
-  }, [shop]); 
+  }, [wireless]); 
 
   // // 車種名
   const [car, setcar] = useState<string>("");
@@ -286,7 +286,7 @@ export const BookingEdit: FC = memo(() => {
     } else {
       setcarError(false);
     }
-  }, [shop]); 
+  }, [car]); 
 
   // // 社員名
   const [employee, setemployee] = useState<string>("");
@@ -301,7 +301,7 @@ export const BookingEdit: FC = memo(() => {
     } else {
       setemployeeError(false);
     }
-  }, [shop]); 
+  }, [employee]); 
 
   // // メモ
   const [others, setothers] = useState<string>("");
@@ -316,7 +316,7 @@ export const BookingEdit: FC = memo(() => {
     } else {
       setothersError(false);
     }
-  }, [shop]); 
+  }, [others]); 
 
 
 

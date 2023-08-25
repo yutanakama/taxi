@@ -123,7 +123,7 @@ common-btn01
 
   
 }
-.common-btn01 a{
+.common-btn01 a , .common-btn01 button{
   display: block;
   margin: auto;
   text-decoration: none;
@@ -139,8 +139,12 @@ common-btn01
   transition: all .3s;
 
 }
-.common-btn01 a:hover{
+.common-btn01 a:hover, .common-btn01 button:hover{
   opacity: 0.7;
+}
+.common-btn01 button:disabled {
+  background-color: #ccc; 
+  cursor: not-allowed;
 }
 
 

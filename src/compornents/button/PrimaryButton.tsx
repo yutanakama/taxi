@@ -1,11 +1,17 @@
-export const PrimaryButton = (props) =>{
-  const{children,href} = props
+export const PrimaryButton = (props) => {
+  const { children, onClick, href, disabled } = props;
 
-  return(
+  if(href) {
+    return (
+      <div className='common-btn01'>
+        <a href={href}>{children}</a>
+      </div>
+    );
+  }
+
+  return (
     <div className='common-btn01'>
-          <a href={href}>{children}</a>
+      <button onClick={onClick} disabled={disabled}>{children}</button>
     </div>
-
-  )
-
+  );
 }

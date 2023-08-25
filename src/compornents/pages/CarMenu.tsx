@@ -1,24 +1,53 @@
-import { FC, memo } from "react"
+import { FC, memo, useEffect, useState } from "react"
 import { DataGrid, GridRowsProp, GridColDef,jaJP } from '@mui/x-data-grid';
 import { HeaderParts } from '../template/Header';
 import { PrimaryButton } from '../button/PrimaryButton';
 
-const rows: GridRowsProp = [
-  { id: 1, col1: 'A094050', col2: 'ホンダ'},
-  { id: 1, col1: 'A094051', col2: 'トヨタ'},
-  { id: 1, col1: 'A094052', col2: 'ホンダ'},
-  { id: 1, col1: 'A094053', col2: 'スバル'},
-  { id: 1, col1: 'A094054', col2: 'ホンダ'},
- 
-];
 
 const columns: GridColDef[] = [
-  { field: 'col1', headerName: '無線番号', width: 630 },
-  { field: 'col2', headerName: '車種名', width: 630 },
+  { field: 'id',
+  headerName: '車ID',
+   width: 420,
+   renderCell:(params) =>(
+     <><a href={"/car_detail?id="+ params.value}>{params.value}</a> </>
+     ) },
+ { field: 'carModel', headerName: '車モデル', width: 420 },
+ { field: 'radioNo', headerName: '無線番号', width: 420 },
 ];
+
+
+type Data = {
+  id: string,
+  carModel: string,
+  radioNo: string,
+};
+
+
 
 
 export const CarMenu: FC = memo(() => {
+   // stateの作成
+   const [carList, setCarList] = useState<Data[]>([]);
+
+   // ドライバー情報一覧の取得
+   useEffect( () =>{
+    fetch("https://taxi-dummy-api.vercel.app/api/driver/getDriverList", {
+      method: "GET"
+    })
+    .then((response) => response.json())
+      .then((data) => {
+        // ここでデータを加工して格納
+        const list:Data[] = data.map((info) => {
+          return({
+            id: info.id,
+            carModel: info.carModel,
+            radioNo:info.radioNo,
+          })
+        })
+        setCarList(list)
+      });
+  },[]);
+
   return (
     <>
       <HeaderParts />
@@ -28,7 +57,7 @@ export const CarMenu: FC = memo(() => {
         </div>
         <div style={{  width: '1260px',margin:'auto',background:'#fff' }}>
           <DataGrid
-          rows={rows}
+          rows={carList}
           columns={columns}
           localeText={jaJP.components.MuiDataGrid.defaultProps.localeText} />
         </div>
